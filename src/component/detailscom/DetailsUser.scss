@@ -1,0 +1,61 @@
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px 0;
+  background: #e0e0e0;
+
+  main {
+    width: 400px;
+    border-radius: 32px;
+    background: #e0e0e0;
+    box-shadow: 25px 25px 51px #c3c3c3, -25px -25px 51px #fdfdfd;
+
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+
+      #rightArrow {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        img {
+          animation: right 2s alternate infinite;
+
+          @keyframes right {
+            // Moved keyframes definition outside the selector
+            0% {
+              transform: translateX(0); // Corrected translate value
+            }
+            25% {
+              transform: translateX(10px); // Adjusted translate value
+            }
+            50% {
+              transform: translateX(0); // Resetting to initial position
+            }
+            100% {
+              transform: translateX(10px); // Adjusted translate value
+            }
+          }
+        }
+      }
+    }
+  }
+  button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+    &:active,
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
