@@ -9,43 +9,30 @@ section {
   background: #e0e0e0;
 
   main {
-    width: 400px;
-    border-radius: 32px;
+    width: 240px; /* Set initial width to auto */
+    border-radius: 10px;
     background: #e0e0e0;
     box-shadow: 25px 25px 51px #c3c3c3, -25px -25px 51px #fdfdfd;
+    transition: width 2s ease-in-out; /* Add transition for smooth width change */
 
+    &.expanded {
+      width: 400px; /* Set width to 400px when expanded */
+      // transition: width 2s ease-in-out;
+    }
     .box {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 0 10px;
-
-      #rightArrow {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-
-        img {
-          animation: right 2s alternate infinite;
-
-          @keyframes right {
-            // Moved keyframes definition outside the selector
-            0% {
-              transform: translateX(0); // Corrected translate value
-            }
-            25% {
-              transform: translateX(10px); // Adjusted translate value
-            }
-            50% {
-              transform: translateX(0); // Resetting to initial position
-            }
-            100% {
-              transform: translateX(10px); // Adjusted translate value
-            }
-          }
-        }
-      }
     }
+  }
+  input {
+    outline: none;
+    border: none;
+    padding: 10px;
+    margin-top: 15px;
+    width: 200px; /* Adjust input width to match main width */
+    // transition: width 0.5s ease-in-out; /* Add transition for input width change */
   }
   button {
     outline: none;
@@ -53,6 +40,7 @@ section {
     border-radius: 50%;
     background: none;
     cursor: pointer;
+    margin-top: 14px;
     &:active,
     &:hover {
       transform: scale(1.1);
